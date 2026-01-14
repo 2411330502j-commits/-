@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動画ページ</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        video {
+            width: 90%;
+            max-width: 1000px;
+            margin-top: 20px;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <video controls autoplay muted loop playsinline>
+        <source src="movie.mp4" type="video/mp4">
+        このブラウザは動画に対応していません。
+    </video>
+
+    <p>🔊 画面をタップすると音が出ます</p>
+
+</body>
+</html>

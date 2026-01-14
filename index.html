@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>動画ページ</title>
+
+<style>
+    body {
+        margin: 0;
+        background: black;
+        color: white;
+        text-align: center;
+        font-family: sans-serif;
+    }
+
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        cursor: pointer;
+    }
+
+    #overlay p {
+        font-size: 20px;
+        opacity: 0.9;
+    }
+
+    video {
+        width: 90%;
+        max-width: 1000px;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<!-- クリック促し画面 -->
+<div id="overlay">
+    <p>▶ 画面をクリックしてください</p>
+</div>
+
+<video id="video" controls playsinline>
+    <source src="movie.mp4" type="video/mp4">
+    このブラウザは動画に対応していません。
+</video>
+
+<script>
+const overlay = document.getElementById("overlay");
+const video = document.getElementById("video");
+
+overlay.addEventListener("click", () => {
+    overlay.style.display = "none";
+
+    video.muted = false;
+    video.volume = 1.0;
+
+    video.play().catch(err => {
+        console.log("再生エラー:", err);
+    });
+});
+</script>
+
+</body>
+</html>
